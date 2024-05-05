@@ -1,7 +1,7 @@
 {
-    "name": "create-gramio",
-    "version": "0.0.6",
-    "description": "Scaffolding your GramIO project with the environment with easy!",
+    "name": "create-gramio-plugin",
+    "version": "0.0.1",
+    "description": "Scaffolding your GramIO plugin with the environment with easy!",
     "keywords": [
         "gramio",
         "scaffolding",
@@ -10,9 +10,6 @@
         "lint",
         "eslint",
         "biome",
-        "orm",
-        "prisma",
-        "drizzle",
         "husky"
     ],
     "main": "dist/index.js",
@@ -21,7 +18,7 @@
         "prepublishOnly": "tsc"
     },
     "bin": {
-        "create-gramio": "dist/index.js"
+        "create-gramio-plugin": "dist/index.js"
     },
     "devDependencies": {
         "@types/bun": "^1.1.1",

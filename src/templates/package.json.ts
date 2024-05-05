@@ -6,6 +6,7 @@ export function getPackageJson({
 	linter,
 	others,
 	pluginName,
+	storage,
 }: PreferencesType) {
 	const sample = {
 		name: `gramio-${pluginName}`,
@@ -13,10 +14,10 @@ export function getPackageJson({
 		description: "Plugin for GramIO",
 		keywords: ["gramio", "gramio-plugin"],
 		scripts: {
-			dev:
-				packageManager === "bun"
-					? "bun  --watch src/index.ts"
-					: `${pmExecuteMap[packageManager]} tsx watch src/index.ts`,
+			// dev:
+			// 	packageManager === "bun"
+			// 		? "bun  --watch src/index.ts"
+			// 		: `${pmExecuteMap[packageManager]} tsx watch src/index.ts`,
 		} as Record<string, string>,
 		dependencies: {
 			gramio: dependencies.gramio,
@@ -55,6 +56,9 @@ export function getPackageJson({
 		sample.devDependencies.husky = dependencies.husky;
 		sample.scripts.prepare = "husky";
 	}
+
+	if (storage)
+		sample.dependencies["@gramio/storage"] = dependencies["@gramio/storage"];
 
 	return JSON.stringify(sample, null, 2);
 }

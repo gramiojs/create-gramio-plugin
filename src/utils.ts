@@ -27,6 +27,7 @@ export class Preferences {
 	packageManager: PackageManager = "bun";
 	linter: "ESLint" | "Biome" | "None" = "None";
 	git = true;
+	storage = false;
 	others: "Husky"[] = [];
 }
 

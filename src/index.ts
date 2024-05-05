@@ -44,6 +44,14 @@ createOrFindDir(projectDir).then(async () => {
 	});
 	preferences.pluginName = pluginName.toLowerCase();
 
+	const { storage } = await prompt<{ storage: boolean }>({
+		type: "toggle",
+		name: "storage",
+		initial: "no",
+		message: "Will your plugin use storage?",
+	});
+	preferences.storage = storage;
+
 	const { linter } = await prompt<{ linter: PreferencesType["linter"] }>({
 		type: "select",
 		name: "linter",

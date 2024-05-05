@@ -11,4 +11,5 @@ export const dependencies = {
 	"eslint-plugin-n": "^17.4.0",
 	"@typescript-eslint/eslint-plugin": "^7.8.0",
 	husky: "^9.0.11",
+	"@gramio/storage": "^0.0.2",
 };
